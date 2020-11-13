@@ -7,10 +7,14 @@
 <div class="container mb-4">
   <div class="content">
     <div class="cards">
-      <% @cocktails.each do |cocktail| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, width: 250, crop: :fill %>)">
-          <%= link_to cocktail.name, cocktail_path(cocktail) %>
-        </div>
+      <% if @cocktails.empty? %>
+      <div></div>
+      <% else %>
+        <% @cocktails.each do |cocktail| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path cocktail.photo.key, width: 250, crop: :fill %>)">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
