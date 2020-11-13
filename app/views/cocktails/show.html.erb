@@ -1,6 +1,12 @@
-<h1><%= @cocktail.name %></h1>
-<h2>Ingredients:</h2>
-<br><br>
-<%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail) %>
-<br><br><br>
-<%= link_to "Back to all cocktails", root_path %>
+<div class="container" id="show">
+  <div>
+    <%= cl_image_tag @cocktail.photo.key, height: 400, crop: :fill %>
+    <h1><%= @cocktail.name %></h1>
+  </div>
+
+  <h2>Ingredients:</h2>
+  <br><br>
+  <%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail) %>
+  <br><br><br>
+  <%= link_to "Back to all cocktails", root_path %>
+</div>
