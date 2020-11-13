@@ -5,6 +5,9 @@
   </div>
 
   <h2>Ingredients:</h2>
+  <% @ingredients.each do |ingredient| %>
+    <li><%= ingredient.name %></li>
+  <% end %>
   <br><br>
   <%= link_to "Create a new dose", new_cocktail_dose_path(@cocktail) %>
   <br><br><br>
